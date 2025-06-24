@@ -26,7 +26,12 @@ RUN apt-get update && \
     vim \
     ldap-utils \
     nvtop \
-    wget
+    wget \
+    cm-super \
+    texlive \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
+    dvipng \
 
 # install Miniforge
 RUN wget -O /tmp/Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
