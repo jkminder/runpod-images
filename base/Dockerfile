@@ -26,9 +26,7 @@ RUN apt-get update && \
     vim \
     ldap-utils \
     nvtop \
-    wget && \
-    wget -q  https://github.com/justjanne/powerline-go/releases/download/v1.24/powerline-go-linux-"$(dpkg --print-architecture)" -O /usr/local/bin/powerline-shell && \
-    chmod a+x /usr/local/bin/powerline-shell
+    wget
 
 # install Miniforge
 RUN wget -O /tmp/Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
@@ -44,6 +42,3 @@ EXPOSE 22
 
 COPY base/.bashrc /tmp/.bashrc
 RUN cat /tmp/.bashrc >> /root/.bashrc && rm /tmp/.bashrc
-
-ENTRYPOINT ["/start.sh"]
-CMD ["/bin/bash"]
