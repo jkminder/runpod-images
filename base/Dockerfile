@@ -39,6 +39,7 @@ RUN chmod -R 777 /opt/conda
 
 # setup ssh
 RUN ssh-keygen -A
+RUN service ssh start
 EXPOSE 22
 
 COPY base/.bashrc /tmp/.bashrc
